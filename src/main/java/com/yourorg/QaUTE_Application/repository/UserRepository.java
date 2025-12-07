@@ -1,4 +1,7 @@
 package com.yourorg.QaUTE_Application.repository;
+// Quản lý đăng nhập/đăng ký
+
+//Cần các hàm tìm kiếm theo username/email để xác thực.
 
 import com.yourorg.QaUTE_Application.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;

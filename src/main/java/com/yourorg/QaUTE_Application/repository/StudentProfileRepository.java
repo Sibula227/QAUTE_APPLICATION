@@ -1,4 +1,5 @@
 package com.yourorg.QaUTE_Application.repository;
+// Dùng để lấy thông tin chi tiết profile dựa trên User ID.
 
 import com.yourorg.QaUTE_Application.entity.StudentProfile;
 import org.springframework.data.jpa.repository.JpaRepository;

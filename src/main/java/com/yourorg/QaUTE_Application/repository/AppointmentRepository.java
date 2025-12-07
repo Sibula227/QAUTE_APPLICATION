@@ -1,6 +1,5 @@
 package com.yourorg.QaUTE_Application.repository;
 
-import com.yourorg.QaUTE_Application.entity.Counselor;
 import com.yourorg.QaUTE_Application.entity.Appointment;
 import com.yourorg.QaUTE_Application.entity.AppointmentStatus;
 import org.springframework.data.jpa.repository.JpaRepository;

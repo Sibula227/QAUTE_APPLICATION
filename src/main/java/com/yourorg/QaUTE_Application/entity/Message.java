@@ -18,7 +18,6 @@ public class Message {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    // Thay vì lưu ID rời rạc như Mongo, trong MySQL ta map trực tiếp quan hệ
     // Một tin nhắn thuộc về 1 cuộc hẹn
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "appointment_id", nullable = false)
