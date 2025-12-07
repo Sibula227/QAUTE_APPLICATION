@@ -1,0 +1,5 @@
+package com.yourorg.QaUTE_Application.entity;
+
+public class Counselor {
+
+}
