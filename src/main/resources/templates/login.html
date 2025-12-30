@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html class="light" lang="vi" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Đăng nhập - Hệ thống Tư vấn HCMUTE</title>
+    <!-- Google Fonts: Lexend -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <!-- Material Symbols -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <!-- Theme Configuration -->
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#135bec",
+                        "primary-hover": "#1d4ed8",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101622",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#1a2233",
+                        "text-main-light": "#0d121b",
+                        "text-main-dark": "#ffffff",
+                        "text-secondary-light": "#4c669a",
+                        "text-secondary-dark": "#94a3b8",
+                        "border-light": "#e7ebf3",
+                        "border-dark": "#2d3748",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark font-display antialiased text-text-main-light dark:text-text-main-dark overflow-hidden">
+    <div class="flex min-h-screen w-full">
+        <!-- Left Side: Hero / Branding (Hidden on mobile) -->
+        <div class="hidden lg:flex lg:w-1/2 relative flex-col justify-between bg-primary overflow-hidden">
+            <div class="absolute inset-0 z-0">
+                <img alt="University campus atmosphere with students walking and talking"
+                    class="h-full w-full object-cover opacity-30 mix-blend-multiply"
+                    data-alt="University campus atmosphere with students walking and talking"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuANQO2g7wmyK18LRqP53cr5Xivglfq3N_5sPHoDbDSGPRf96SkH8_O-zeOHhp6wyI50htIRDhyIXMZg601BLFJnN2w2brQAqutuORXldN6F7O5S0JSckDdC5kcaxYS9q97IIe9dG3MrOTRNkFSd7MGdsAxpBzmRVhFIzAzBiOJfFlH7UQ5NlqnFeCy9xEhfA8iBC4bxjXDGL5Z_VAktjJphzrE19urDa5v5GtLBvy0d4aBkobo2yoyhRqAtH0rkU1PHPAku8hHlH7M" />
+                <div class="absolute inset-0 bg-gradient-to-t from-primary/90 to-primary/40"></div>
+            </div>
+            <div class="relative z-10 p-12">
+                <div class="flex items-center gap-3 text-white mb-8">
+                    <!-- Simple Logo Placeholder -->
+                    <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-white/20 backdrop-blur-sm">
+                        <span class="material-symbols-outlined text-white" style="font-size: 24px;">school</span>
+                    </div>
+                    <span class="text-xl font-bold tracking-wide">HCMUTE</span>
+                </div>
+            </div>
+            <div class="relative z-10 p-12 mt-auto">
+                <h2 class="text-4xl font-bold text-white leading-tight mb-4">Hệ thống Tư vấn<br />Sinh viên</h2>
+                <p class="text-white/80 text-lg max-w-md">Kết nối, chia sẻ và giải đáp mọi thắc mắc của bạn trên hành
+                    trình đại học. Chúng tôi ở đây để lắng nghe.</p>
+                <div class="mt-8 flex gap-2">
+                    <div class="h-1.5 w-8 rounded-full bg-white"></div>
+                    <div class="h-1.5 w-2 rounded-full bg-white/40"></div>
+                    <div class="h-1.5 w-2 rounded-full bg-white/40"></div>
+                </div>
+            </div>
+        </div>
+        <!-- Right Side: Login Form -->
+        <div
+            class="flex w-full lg:w-1/2 flex-col justify-center bg-background-light dark:bg-background-dark px-4 py-12 sm:px-6 lg:px-20 xl:px-24 overflow-y-auto">
+            <div class="mx-auto w-full max-w-sm lg:w-96">
+                <!-- Mobile Logo (Visible only on smaller screens) -->
+                <div class="lg:hidden flex justify-center mb-8">
+                    <div class="flex items-center gap-2">
+                        <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-primary text-white">
+                            <span class="material-symbols-outlined" style="font-size: 24px;">school</span>
+                        </div>
+                        <span class="text-xl font-bold text-primary dark:text-white">HCMUTE</span>
+                    </div>
+                </div>
+                <div class="text-center lg:text-left">
+                    <h2 class="text-3xl font-bold tracking-tight text-text-main-light dark:text-text-main-dark">Chào
+                        mừng trở lại</h2>
+                    <p class="mt-2 text-sm text-text-secondary-light dark:text-text-secondary-dark">
+                        Vui lòng nhập thông tin để truy cập hệ thống tư vấn.
+                    </p>
+                    <div th:if="${param.error}" class="mt-2 text-sm text-red-600">
+                        Tên đăng nhập hoặc mật khẩu không đúng!
+                    </div>
+                    <div th:if="${param.logout}" class="mt-2 text-sm text-green-600">
+                        Đăng xuất thành công!
+                    </div>
+                </div>
+                <div class="mt-10">
+                    <form th:action="@{/api/auth/login}" class="space-y-6" method="POST">
+                        <!-- Email Input -->
+                        <div>
+                            <label
+                                class="block text-sm font-medium leading-6 text-text-main-light dark:text-text-main-dark"
+                                for="username">
+                                Email hoặc Tên đăng nhập
+                            </label>
+                            <div class="mt-2 relative rounded-md shadow-sm">
+                                <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+                                    <span
+                                        class="material-symbols-outlined text-text-secondary-light dark:text-text-secondary-dark"
+                                        style="font-size: 20px;">mail</span>
+                                </div>
+                                <input autocomplete="username"
+                                    class="block w-full rounded-lg border-0 py-3 pl-10 text-text-main-light dark:text-text-main-dark shadow-sm ring-1 ring-inset ring-gray-300 dark:ring-border-dark placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6 bg-white dark:bg-surface-dark"
+                                    id="username" name="username" placeholder="admin" required="" type="text" />
+                            </div>
+                        </div>
+                        <!-- Password Input -->
+                        <div>
+                            <div class="flex items-center justify-between">
+                                <label
+                                    class="block text-sm font-medium leading-6 text-text-main-light dark:text-text-main-dark"
+                                    for="password">Mật khẩu</label>
+                            </div>
+                            <div class="mt-2 relative rounded-md shadow-sm">
+                                <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+                                    <span
+                                        class="material-symbols-outlined text-text-secondary-light dark:text-text-secondary-dark"
+                                        style="font-size: 20px;">lock</span>
+                                </div>
+                                <input autocomplete="current-password"
+                                    class="block w-full rounded-lg border-0 py-3 pl-10 pr-10 text-text-main-light dark:text-text-main-dark shadow-sm ring-1 ring-inset ring-gray-300 dark:ring-border-dark placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6 bg-white dark:bg-surface-dark"
+                                    id="password" name="password" placeholder="••••••••" required="" type="password" />
+                                <div class="absolute inset-y-0 right-0 flex items-center pr-3 cursor-pointer group">
+                                    <span
+                                        class="material-symbols-outlined text-text-secondary-light dark:text-text-secondary-dark group-hover:text-primary transition-colors"
+                                        style="font-size: 20px;">visibility_off</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Login Button -->
+                        <div>
+                            <button
+                                class="flex w-full justify-center rounded-lg bg-primary px-3 py-3 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-primary-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary transition-all duration-200"
+                                type="submit">
+                                Đăng nhập
+                            </button>
+                        </div>
+                    </form>
+                    <!-- Divider -->
+                    <div class="mt-8">
+                        <div class="relative">
+                            <div aria-hidden="true" class="absolute inset-0 flex items-center">
+                                <div class="w-full border-t border-gray-200 dark:border-border-dark"></div>
+                            </div>
+                            <div class="relative flex justify-center text-sm font-medium leading-6">
+                                <span
+                                    class="bg-background-light dark:bg-background-dark px-6 text-text-secondary-light dark:text-text-secondary-dark">Hoặc
+                                    tiếp tục với</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

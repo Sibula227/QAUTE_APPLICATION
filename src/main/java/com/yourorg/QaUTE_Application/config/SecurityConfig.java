@@ -49,9 +49,12 @@ public class SecurityConfig {
                         // -- Tất cả các request còn lại PHẢI đăng nhập --
                         .anyRequest().authenticated())
 
-                // 3. Form Login (Đăng nhập cơ bản - Sử dụng trang mặc định của Spring)
+                // 3. Form Login (Đăng nhập cơ bản)
                 .formLogin(form -> form
+                        .loginPage("/login") // Custom Login Page
+                        .loginProcessingUrl("/api/auth/login") // Handle by Spring Security
                         .defaultSuccessUrl("/", true) // Redirect sau khi login thành công
+                        .failureUrl("/login?error")
                         .permitAll())
 
                 // 4. Logout
