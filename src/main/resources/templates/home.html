@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Home - QaUTE</title>
+</head>
+<body>
+    <h1>Welcome to QaUTE Application</h1>
+    <div th:if="${username}">
+        <p>Hello, <b th:text="${username}">User</b>!</p>
+        <form th:action="@{/logout}" method="post">
+            <button type="submit">Logout</button>
+        </form>
+    </div>
+    <div th:unless="${username}">
+        <p>You are not logged in.</p>
+        <a href="/login">Login</a>
+    </div>
+</body>
+</html>
